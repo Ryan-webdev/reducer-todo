@@ -13,7 +13,7 @@ function TodoForm(){
 
     const [state, dispatch] = useReducer(todoReducer, initialState)
 
-
+    console.log(state)
 //     const handleChange = e => {
 //         setTodoItem(e.target.value);
 //     }
@@ -49,7 +49,7 @@ function TodoForm(){
         {/* loops through state and posts the items to the page */}
         {state.todoList.map((item, index) => {
       return <p
-       className={`${item.completed ? "checkedOff": ""}`}
+       className={`${item.completed ? "checkedOff": ''}`}
        onClick={() => dispatch({type: "COMPLETED", payload:index})}>{item.todoList}</p>;
     })}
     

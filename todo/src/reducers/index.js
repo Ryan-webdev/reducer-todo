@@ -1,8 +1,7 @@
 
 //declaring initial state
 export const initialState ={
-    todoList: [],
-    completed: false
+    todoList: []
 };
 
 //setting up the todo Reducer
@@ -19,6 +18,7 @@ export const todoReducer = (state, action) =>{
                 todoList: [
                     ...state.todoList, 
                     {todoList: action.payload, completed: false} ]}
+
         //this will reset state if the item is marked completed
         case "CLEAR_COMPLETED":
             return {
