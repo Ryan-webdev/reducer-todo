@@ -22,14 +22,7 @@ export const todoReducer = (state, action) =>{
         //this will reset state if the item is marked completed
         case "CLEAR_COMPLETED":
             return {
-                todoList: state.todoList.map((item) => {
-                    if (item.completed){
-                     return []
-                    }
-                       
-                     return item
-                    
-                 })
+                todoList: [...state.todoList.filter(item => !item.completed)]
             }
         //check to see if the item is completed or not
          case "COMPLETED":
